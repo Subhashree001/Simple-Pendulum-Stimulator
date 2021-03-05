@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple Pendulum</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="init()">
+
+  <!-- Whole stmiulation window  800px*600px-->
+  <div class="stimulation_window">
+    <h1 id="thread_">SIMPLE PENDULUM</h1>
+
+    <!-- Display the pendulum,graph and the results -->
+    <div class="display_box">
+      <div class="pendulum_box">
+        <!-- html for the pendulum animation -->
+        <div class="base">
+          <div class="holder"></div>
+          <div id="thread">
+            <div class="knob"></div>
+            <div class="pendulum"></div>
+          </div>
+          <div id="shadow"></div>
+        </div>
+        <!-- html for the input responsive output graph -->
+        <div class="graph">
+          <div class="scale">
+            <h2>Graph Scale:</h2>
+            <h2>Y-axis:Amplitude(mm)</h2>
+            <h2>X-axis:Time(s)</h2>
+          </div>
+          <div class="plot">
+            <canvas id="canvas" width="270" height="150"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- displaying the results  -->
+      <div class="result_box">
+        <h1>RESULT</h1>
+        <h2 id="time_period">Time Period(T):</h2>
+        <h2 id="natural_f_Hz">Natural Frequncy(Hz):</h2>
+        <h2 id="natural_f_rad">Natural Frequency(rad/sec):</h2>
+      </div>
+    </div>
+
+   <!-- User's input column  -->
+    <div class="input_box">
+
+      <!-- For varying the length of the pendulum and display the parameters needed -->
+      <div class="variable_box">
+        <h1>VARIABLE</h1>
+        <h2>Length(mm)</h2>
+        <input type="number" id="length" value="100" min="100" max="200" onchange="myFunction()">
+        <div class="variables_confirmation">
+          <h2 id="len">Length:</h2>
+          <h2 id="max_amp">Maximum amplitude(mm):</h2>
+          <h2>Value of g: 9.8m/s<sup>2</sup></h2>
+        </div>
+      </div>
+
+      <!-- Controling the animation box -->
+      <div class="control_box">
+        <h1>CONTROL</h1>
+        <button id="start_button" type="button" name="button" onclick="start()">Start</button>
+        <button id="stop_botton" type="button" name="button" onclick="stop()">Stop</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="main.js" charset="utf-8"> </script>
+</body>
+
+</html>
